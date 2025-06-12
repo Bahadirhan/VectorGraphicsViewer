@@ -1,54 +1,74 @@
-# VectorGraphicsViewer - Technical Document
+# VectorGraphicsViewer
 
-## Project Purpose  
-VectorGraphicsViewer is a desktop application that reads vector shapes (Line, Circle, Triangle) in JSON format and displays them on a WPF interface. The project is developed on .NET Framework 4.8 using the MVVM architecture.
+A modular and extensible WPF application to load, display, and interact with vector shapes (lines, circles, triangles) defined in external JSON files. Built using MVVM and a layered architecture for maintainability and flexibility.
 
-## Architectural Structure  
-The project is divided into 4 main layers following Clean Architecture principles:
+---
 
-- **Domain**  
-  Contains pure shape abstractions:  
-  - `IShape` interface  
-  - `LineShape`, `CircleShape`, `TriangleShape` classes
+## ✨ Features
 
-- **Infrastructure**  
-  Contains file reading and parsing logic:  
-  - `JsonShapeParser` (parses shapes from JSON)  
-  - `ShapeFileReader` (reads file content)
+- Load vector shapes from JSON files
+- Display lines, circles, and triangles with ARGB colors
+- Fit-to-screen scaling for large coordinate spaces
+- Zoom in/out using mouse wheel
+- Click to select shapes with visual highlight
+- Move selected shapes using keyboard arrows
+- Support for transparency and fill/border rendering
 
-- **Application**  
-  Application services exposed to UI:  
-  - `IShapeService` interface  
-  - `ShapeService` implementation
+---
 
-- **Presentation (UI)**  
-  WPF Views, ViewModels, and Controls:  
-  - `ShapeViewerViewModel`  
-  - `ShapeView` (UserControl)  
-  - `MainWindow.xaml`
+## 🧱 Architecture
 
-## Features  
-- Loading shapes from JSON file  
-- Fit-to-screen and zoom functionality  
-- Selection support (single click)  
-- Moving selected shape using keyboard arrows  
-- ARGB color and transparency support
+Follows Clean Architecture with 4 layers:
 
-## JSON Data Format  
+### 1. **Domain**
+
+- Core abstractions: `IShape`, `LineShape`, `CircleShape`, `TriangleShape`
+- Contains geometry, color, hit-test, and drawing logic
+
+### 2. **Application**
+
+- Interfaces and services (e.g., `IShapeService`)
+- Bridges UI and file reading/parsing logic
+
+### 3. **Infrastructure**
+
+- File handling (`ShapeFileReader`)
+- JSON parsing (`JsonShapeParser`)
+- Easily extendable to support new formats like XML
+
+### 4. **Presentation**
+
+- WPF UI (ViewModels, XAML Views)
+- `ShapeViewerViewModel` as main logic handler
+- `ShapeView` for custom drawing and selection UI
+
+---
+
+## ▶️ How to Run
+
+1. Build the solution in Visual Studio (Target: .NET Framework 4.8)
+2. Run the application (MainWindow\.xaml)
+3. Click "Load File" to select a JSON file with shapes
+4. Interact using mouse and keyboard
+
+---
+
+## 📄 JSON Input Format
+
 ```json
 [
+  {
+    "type": "line",
+    "a": "0; 0",
+    "b": "100; 50",
+    "color": "255; 0; 255; 0"
+  },
   {
     "type": "circle",
     "center": "100; 150",
     "radius": 30,
     "color": "128; 255; 0; 0",
     "filled": true
-  },
-  {
-    "type": "line",
-    "a": "0; 0",
-    "b": "100; 100",
-    "color": "255; 0; 0; 255"
   },
   {
     "type": "triangle",
@@ -59,3 +79,52 @@ The project is divided into 4 main layers following Clean Architecture principle
     "filled": false
   }
 ]
+```
+
+- Coordinates are in Cartesian space (Y axis up)
+- Colors are in ARGB format: Alpha; Red; Green; Blue
+- If `filled` is true, the shape is rendered with border and fill
+
+---
+
+## 🖱️ User Interaction
+
+| Action              | Behavior            |
+| ------------------- | ------------------- |
+| Scroll wheel        | Zoom in/out         |
+| Left click on shape | Select shape        |
+| Arrow keys          | Move selected shape |
+
+---
+
+## ⚙️ Extensibility
+
+| Extension                   | How to implement                                            |
+| --------------------------- | ----------------------------------------------------------- |
+| New shape (e.g., Rectangle) | Implement `IShape` and update parser                        |
+| New format (e.g., XML)      | Create new `IShapeParser` and inject into `ShapeFileReader` |
+| New selection behavior      | Extend `ShapeView` and ViewModel logic                      |
+
+---
+
+## 🧠 Design Patterns Used
+
+- **MVVM** – separation of concerns between UI and logic
+- **Command Pattern** – via custom `RelayCommand`
+- **Dependency Injection** – `ShapeService`, `IShapeParser` abstractions
+
+---
+
+## 📁 Project Structure
+
+- `/Domain` – business logic & shape contracts
+- `/Application` – services & interfaces
+- `/Infrastructure` – file I/O & parsing
+- `/Presentation` – WPF Views, ViewModels, and Controls
+
+---
+
+## 👨‍💻 Author
+
+Bahadirhan Keles
+
