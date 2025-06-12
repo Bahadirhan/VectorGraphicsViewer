@@ -125,4 +125,3 @@ Folgt der Clean Architecture mit 4 Schichten:
 ## 👨‍💻 Autor
 
 Bahadirhan Keles
-kelesbahadirhan@gmail.com
