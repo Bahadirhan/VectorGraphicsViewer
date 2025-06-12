@@ -1,0 +1,50 @@
+﻿<Window x:Class="VectorGraphicsViewer.Presentation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:VectorGraphicsViewer.Presentation.Controls"
+        xmlns:local="clr-namespace:VectorGraphicsViewer.Presentation.Converters"
+        xmlns:domain="clr-namespace:VectorGraphicsViewer.Domain.Shapes;assembly=VectorGraphicsViewer.Domain"
+        mc:Ignorable="d"
+        Title="Vector Graphics Viewer" Height="700" Width="900"
+        PreviewMouseWheel="ShapeHost_MouseWheel"
+        x:Name="MainWindowControl">
+    <Window.Resources>
+        <local:IShapeSelectedMultiConverter x:Key="ShapeSelectedMultiConverter"/>
+    </Window.Resources>
+    <DockPanel>
+        <Button Content="Select JSON File" Command="{Binding LoadFileCommand}" Margin="5" DockPanel.Dock="Top" />
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding Shapes}"
+                          PreviewMouseLeftButtonDown="ShapeHost_MouseLeftButtonDown"
+                          >
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Canvas Background="White"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="{x:Type domain:IShape}">
+                        <controls:ShapeView
+                                    Shape="{Binding}"
+                                    Width="900"
+                                    Height="700"
+                                    Scale="{Binding DataContext.Scale, RelativeSource={RelativeSource AncestorType=Window}}"
+                                    OffsetX="{Binding DataContext.OffsetX, RelativeSource={RelativeSource AncestorType=Window}}"
+                                    OffsetY="{Binding DataContext.OffsetY, RelativeSource={RelativeSource AncestorType=Window}}">
+
+                            <controls:ShapeView.IsSelected>
+                                <MultiBinding Converter="{StaticResource ShapeSelectedMultiConverter}">
+                                    <Binding Path="DataContext.SelectedShape" RelativeSource="{RelativeSource AncestorType=Window}" />
+                                    <Binding />
+                                    <!-- Bu, o anki IShape -->
+                                </MultiBinding>
+                            </controls:ShapeView.IsSelected>
+                        </controls:ShapeView>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </DockPanel>
+</Window>

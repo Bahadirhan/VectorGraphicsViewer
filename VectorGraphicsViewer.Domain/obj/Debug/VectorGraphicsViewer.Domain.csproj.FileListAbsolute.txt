@@ -1,0 +1,6 @@
+C:\Users\BKELES\source\repos\VectorGraphicsViewer\VectorGraphicsViewer.Domain\bin\Debug\VectorGraphicsViewer.Domain.dll
+C:\Users\BKELES\source\repos\VectorGraphicsViewer\VectorGraphicsViewer.Domain\bin\Debug\VectorGraphicsViewer.Domain.pdb
+C:\Users\BKELES\source\repos\VectorGraphicsViewer\VectorGraphicsViewer.Domain\obj\Debug\VectorGraphicsViewer.Domain.csproj.AssemblyReference.cache
+C:\Users\BKELES\source\repos\VectorGraphicsViewer\VectorGraphicsViewer.Domain\obj\Debug\VectorGraphicsViewer.Domain.csproj.CoreCompileInputs.cache
+C:\Users\BKELES\source\repos\VectorGraphicsViewer\VectorGraphicsViewer.Domain\obj\Debug\VectorGraphicsViewer.Domain.dll
+C:\Users\BKELES\source\repos\VectorGraphicsViewer\VectorGraphicsViewer.Domain\obj\Debug\VectorGraphicsViewer.Domain.pdb

@@ -1,0 +1,23 @@
+[
+  {
+    "type": "circle",
+    "center": "50; 50",
+    "radius": 40,
+    "color": "128;0;255;0",
+    "filled": true
+  },
+  {
+    "type": "line",
+    "a": "0; 0",
+    "b": "100; 100",
+    "color": "255;255;0;0"
+  },
+  {
+    "type": "triangle",
+    "a": "0; 0",
+    "b": "100; 0",
+    "c": "50; 100",
+    "color": "64;0;0;255",
+    "filled": true
+  }
+]

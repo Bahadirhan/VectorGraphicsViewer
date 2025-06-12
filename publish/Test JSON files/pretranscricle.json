@@ -1,0 +1,9 @@
+[
+  {
+    "type": "circle",
+    "center": "50; 50",
+    "radius": 30,
+    "color": "128; 0; 255; 0",
+    "filled": true
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "type": "circle",
+    "center": "0; 0",
+    "radius": 40.0,
+    "filled": false,
+    "color": "255; 0; 0; 255"
+  },
+  {
+    "type": "circle",
+    "center": "100; 50",
+    "radius": 30.0,
+    "filled": true,
+    "color": "255; 0; 255; 0"
+  }
+]

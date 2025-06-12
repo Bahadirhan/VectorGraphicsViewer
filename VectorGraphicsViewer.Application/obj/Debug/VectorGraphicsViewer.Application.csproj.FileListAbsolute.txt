@@ -1,0 +1,13 @@
+C:\Users\BKELES\source\repos\VectorGraphicsViewer\VectorGraphicsViewer.Application\bin\Debug\VectorGraphicsViewer.Application.dll
+C:\Users\BKELES\source\repos\VectorGraphicsViewer\VectorGraphicsViewer.Application\bin\Debug\VectorGraphicsViewer.Application.pdb
+C:\Users\BKELES\source\repos\VectorGraphicsViewer\VectorGraphicsViewer.Application\bin\Debug\VectorGraphicsViewer.Domain.dll
+C:\Users\BKELES\source\repos\VectorGraphicsViewer\VectorGraphicsViewer.Application\bin\Debug\VectorGraphicsViewer.Infrastructure.dll
+C:\Users\BKELES\source\repos\VectorGraphicsViewer\VectorGraphicsViewer.Application\bin\Debug\Newtonsoft.Json.dll
+C:\Users\BKELES\source\repos\VectorGraphicsViewer\VectorGraphicsViewer.Application\bin\Debug\VectorGraphicsViewer.Domain.pdb
+C:\Users\BKELES\source\repos\VectorGraphicsViewer\VectorGraphicsViewer.Application\bin\Debug\VectorGraphicsViewer.Infrastructure.pdb
+C:\Users\BKELES\source\repos\VectorGraphicsViewer\VectorGraphicsViewer.Application\bin\Debug\Newtonsoft.Json.xml
+C:\Users\BKELES\source\repos\VectorGraphicsViewer\VectorGraphicsViewer.Application\obj\Debug\VectorGraphicsViewer.Application.csproj.AssemblyReference.cache
+C:\Users\BKELES\source\repos\VectorGraphicsViewer\VectorGraphicsViewer.Application\obj\Debug\VectorGraphicsViewer.Application.csproj.CoreCompileInputs.cache
+C:\Users\BKELES\source\repos\VectorGraphicsViewer\VectorGraphicsViewer.Application\obj\Debug\VectorGr.FEC45837.Up2Date
+C:\Users\BKELES\source\repos\VectorGraphicsViewer\VectorGraphicsViewer.Application\obj\Debug\VectorGraphicsViewer.Application.dll
+C:\Users\BKELES\source\repos\VectorGraphicsViewer\VectorGraphicsViewer.Application\obj\Debug\VectorGraphicsViewer.Application.pdb
